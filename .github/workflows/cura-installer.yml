@@ -143,7 +143,7 @@ jobs:
 
             -   name: Configure GPG Key Linux (Bash)
                 if: ${{ runner.os == 'Linux' }}
-                run: echo -n "$GPG_PRIVATE_KEY" | base64 --decode | gpg --import
+                run: echo -n "$GPG_PRIVATE_KEY" | base64 --decode | gpg --import || true
 
             -   name: Configure Macos keychain (Bash)
                 id: macos-keychain
